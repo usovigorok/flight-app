@@ -1,0 +1,100 @@
+.item {
+  max-width: 700px;
+  margin: auto;
+
+  &__date {
+    margin-bottom: 7px;
+  }
+
+  &__flight-wrapper {
+    display: flex;
+    border: solid lightgray 1px;
+    border-radius: 5px;
+    padding: 20px;
+  }
+
+  &__col {
+    flex-grow: 1;
+  }
+
+  &__col-middle {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__departure,
+  &__arrive {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  &__time {
+    font-size: 20px;
+  }
+
+  &__airport-code {
+    color: $color-secondary;
+  }
+
+  &__flight-duration-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 3;
+    margin: 0 20px;
+  }
+
+  &__flight-duration {
+    text-align: center;
+  }
+
+  &__flight-duration-bar-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__flight-bar {
+    height: 2px;
+    width: 86%;
+    background: black;
+  }
+
+  &__flight-icon {
+    margin-left: auto;
+  }
+
+  &__arrive {
+    text-align: right;
+  }
+
+  &__col-right {
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn {
+    margin-left: auto;
+    width: 30px;
+    cursor: pointer;
+
+    &--up {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__more-info {
+    height: 0;
+    overflow: hidden;
+    transition: 0.2s;
+
+    &--open {
+      height: auto;
+      transition: 0.2s;
+      border: solid lightgray 1px;
+      border-radius: 5px;
+      border-top: none;
+      padding: 20px 0px;
+    }
+  }
+}

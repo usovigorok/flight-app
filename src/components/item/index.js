@@ -99,7 +99,7 @@ const Item = ({ departure, arrival, status, flight }) => {
                 <div className="item__flight-bar"></div>
                 <span className="item__flight-icon">&#9992;</span>
               </div>
-              <p>{delayTime(departure.scheduledDepartureTime, departure.expectedDepartureTime)}</p>
+              {isDeleyed && <p>{delayTime(departure.scheduledDepartureTime, departure.expectedDepartureTime)}</p>}
             </div>
             <div className="item__arrive">
               <span className="item__time bold">{formateTime(arrival.scheduledArrivalTime)}</span>

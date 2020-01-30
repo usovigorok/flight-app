@@ -59,6 +59,6 @@
       "expectedArrivalTime": "2020-12-11T03:48:00.000",
       "terminal": "East"
     },
-    "status": "Arrived"
+    "status": "Delayed"
   }
 ]

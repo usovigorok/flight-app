@@ -1,0 +1,101 @@
+.item-more {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+  }
+
+  &__row {
+    display: flex;
+  }
+
+  &__row-middle {
+    margin: 37px 0;
+  }
+
+  &__flight-nr {
+    margin-right: 10px;
+  }
+
+  &__flight-status {
+    color: $color-succes;
+
+    &--red {
+      color: $color-danger
+    }
+  }
+
+  &__left {
+    display: flex;
+    margin: 3px 50px;
+  }
+
+  &__bar {
+    width: 2px;
+    background: $color-secondary;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      width: 10px;
+      height: 10px;
+      border: 2px solid $color-secondary;
+      border-radius: 100%;
+      background: #fff;
+      position: absolute;
+    }
+
+    &::before {
+      top: 0;
+      left: -6px;
+    }
+
+    &::after {
+      bottom: 0;
+      left: -6px;
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100px;
+  }
+
+  &__airport-code {
+    margin-right: 10px;
+  }
+
+  &__airport {
+    margin-right: 10px;
+
+  }
+
+  &__time {
+    margin-right: 30px;
+
+    &--delayed {
+      text-decoration: line-through;
+      margin-right: 10px;
+      color: $color-danger
+    }
+  }
+
+  &__time-icon-wrapper {
+    display: flex;
+    align-items: center;
+    color: $color-secondary;
+  }
+
+  &__clock {
+    width: 13px;
+    margin-right: 10px;
+  }
+
+  &__delayed {
+    margin-right: 10px;
+  }
+}
