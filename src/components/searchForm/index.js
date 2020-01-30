@@ -12,4 +12,4 @@ const SearchForm = ({ onSubmit, onChange, search }) => {
   )
 }
 
-export default SearchForm
+export default SearchForm;

@@ -37,6 +37,14 @@
     color: $color-secondary;
   }
 
+  &__status {
+    color: $color-succes;
+
+    &--delayed {
+      color: $color-danger
+    }
+  }
+
   &__flight-duration-wrapper {
     position: relative;
     display: flex;
@@ -78,7 +86,7 @@
     width: 30px;
     cursor: pointer;
 
-    &--up {
+    &--down {
       transform: rotate(180deg);
     }
   }

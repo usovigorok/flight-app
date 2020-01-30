@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Btn from '../../assets/img/button.png';
-import ItemMore from '../itemMore'
-
-
+import Btn from '../../assets/img/button.svg';
+import ItemMore from './itemMore';
 
 const Item = ({ departure, arrival, status, flight }) => {
 
@@ -44,32 +42,43 @@ const Item = ({ departure, arrival, status, flight }) => {
 
     if (diff > 0) {
       setIsisDeleyed(true)
-      return diff
+      return diff;
     }
   }
 
   const delayTime = (time1, time2) => {
-    let diff = new Date(time2).getTime() - new Date(time1).getTime();
-    let minutes = parseInt((diff / (1000 * 60)) % 60)
+    const diff = new Date(time2).getTime() - new Date(time1).getTime();
+    let minutes = parseInt((diff / (1000 * 60)) % 60);
     let hours = parseInt((diff / (1000 * 60 * 60)) % 24);
 
-    hours = (hours < 10) ? "0" + hours : hours;
+    const checkHours = (h) => {
+      let hour;
+      if (h === 0) {
+        hour = '';
+      } else if (h < 10) {
+        hour = "0" + h + "h ";
+      } else {
+        hour = h;
+      }
+      return hour;
+    }
+
     minutes = (minutes < 10) ? "0" + minutes : minutes;
 
     if (diff > 0) {
-      return `${hours}h ${minutes}`
+      return `${checkHours(hours)}${minutes}min`;
     }
   }
 
   const durationFlight = (time1, time2) => {
     let diff = new Date(time2).getTime() - new Date(time1).getTime();
-    let minutes = parseInt((diff / (1000 * 60)) % 60)
+    let minutes = parseInt((diff / (1000 * 60)) % 60);
     let hours = parseInt((diff / (1000 * 60 * 60)) % 24);
 
     hours = (hours < 10) ? "0" + hours : hours;
     minutes = (minutes < 10) ? "0" + minutes : minutes;
 
-    return `${hours}h ${minutes}`
+    return `${hours}h ${minutes}`;
   }
 
   const openItem = () => {
@@ -87,6 +96,7 @@ const Item = ({ departure, arrival, status, flight }) => {
         <div className="item__flight-wrapper">
           <div className="item__col-left item__col">
             <p className="item__company">{flight.company} {flight.number}</p>
+            <p className={isDeleyed ? "item__status item__status--delayed" : "item__status"}>{status} {isDeleyed ? `(+${delayTime(departure.scheduledDepartureTime, departure.expectedDepartureTime)})` : null}</p>
           </div>
           <div className="item__col-middle item__col">
             <div className="item__departure">
@@ -99,7 +109,6 @@ const Item = ({ departure, arrival, status, flight }) => {
                 <div className="item__flight-bar"></div>
                 <span className="item__flight-icon">&#9992;</span>
               </div>
-              {isDeleyed && <p>{delayTime(departure.scheduledDepartureTime, departure.expectedDepartureTime)}</p>}
             </div>
             <div className="item__arrive">
               <span className="item__time bold">{formateTime(arrival.scheduledArrivalTime)}</span>
@@ -107,7 +116,7 @@ const Item = ({ departure, arrival, status, flight }) => {
             </div>
           </div>
           <div className="item__col-right item__col">
-            <img src={Btn} alt="btn" className={isOpen ? "item__btn item__btn--up" : "item__btn"} onClick={openItem} />
+            <img src={Btn} alt="btn" className={isOpen ? "item__btn" : "item__btn item__btn--down"} onClick={openItem} />
           </div>
         </div>
         <div className={isOpen ? "item__more-info item__more-info--open" : "item__more-info"}>
@@ -118,4 +127,4 @@ const Item = ({ departure, arrival, status, flight }) => {
   )
 }
 
-export default Item
+export default Item;

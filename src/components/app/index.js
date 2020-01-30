@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './app.scss';
 import SearchForm from '../searchForm/';
 import Item from '../item'
-import Data from '../../data';
 
 function App() {
-  const [data] = useState(Data);
+  const [data, setData] = useState([]);
   const [flight, setFlight] = useState('')
   const [search, setSearch] = useState('');
 
@@ -19,12 +18,21 @@ function App() {
     setFlight(flight)
   }
 
+  useEffect(() => {
+    const getData = async () => {
+      let response = await fetch(`https://raw.githubusercontent.com/ocebeki/flightData/master/data.json`);
+      let data = await response.json()
+      setData(data)
+    }
+    getData()
+  }, [])
+
   return (
     <div className="app">
       FR1142
       BR1142
-      PL1142
-
+      BL1042
+      W62284
       <SearchForm onChange={onChange} onSubmit={onSubmit} search={search} />
       <div className="app__result">
         <div className="app__result-wrapper">
