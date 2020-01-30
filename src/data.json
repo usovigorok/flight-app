@@ -1,22 +1,64 @@
 [{
-  "flight": {
-    "number": "FR1142"
+    "flight": {
+      "number": "FR1142",
+      "company": "Ryanair"
+    },
+    "departure": {
+      "airport": "Berlin-Schonefeld",
+      "airportCode": "SXF",
+      "scheduledDepartureTime": "2020-12-11T13:00:00.000",
+      "expectedDepartureTime": "2020-12-11T13:00:00.000",
+      "terminal": "B"
+    },
+    "arrival": {
+      "airport": "Warsaw-Chopin",
+      "airportCode": "WAW",
+      "scheduledArrivalTime": "2020-12-11T15:45:00.000",
+      "expectedArrivalTime": "2020-12-11T15:45:00.000",
+      "terminal": "North"
+    },
+    "status": "On time"
   },
-  "delayd": {
-    "status": false,
-    "delayEstimation": null
+  {
+    "flight": {
+      "number": "BR1142",
+      "company": "Easyjet"
+    },
+    "departure": {
+      "airport": "London-Luton",
+      "airportCode": "LTN",
+      "scheduledDepartureTime": "2020-12-11T01:05:00.000",
+      "expectedDepartureTime": "2020-12-12T01:35:00.000",
+      "terminal": "D"
+    },
+    "arrival": {
+      "airport": "Brussels",
+      "airportCode": "BRU",
+      "scheduledArrivalTime": "2020-12-11T03:30:00.000",
+      "expectedArrivalTime": "2020-12-12T04:00:00.000",
+      "terminal": "A"
+    },
+    "status": "Delayed"
   },
-  "departure": {
-    "airportCode": "JFK",
-    "scheduledDeparture": "2020-12-11T01:06:00.000",
-    "expectedDeparture": "2020-12-11T01:06:00.000",
-    "terminal": "B",
-    "gate": 13
-  },
-  "arrival": {
-    "airportCode": "CVG",
-    "scheduledArrival": "2020-12-11T03:38:00.000",
-    "expectedArrivalTime": "2020-12-11T03:38:00.000"
-  },
-  "status": "On time"
-}]
+  {
+    "flight": {
+      "number": "PL1142",
+      "company": "LOT"
+    },
+    "departure": {
+      "airport": "Brussels",
+      "airportCode": "JFK",
+      "scheduledDepartureTime": "2020-12-11T01:06:00.000",
+      "expectedDepartureTime": "2020-12-11T01:16:00.000",
+      "terminal": "North"
+    },
+    "arrival": {
+      "airport": "Brussels",
+      "airportCode": "CVG",
+      "scheduledArrivalTime": "2020-12-11T03:38:00.000",
+      "expectedArrivalTime": "2020-12-11T03:48:00.000",
+      "terminal": "East"
+    },
+    "status": "Arrived"
+  }
+]
